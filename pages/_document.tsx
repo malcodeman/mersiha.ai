@@ -6,11 +6,6 @@ import Document, {
   DocumentContext,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import mixpanel from "mixpanel-browser";
-
-import { MIXPANEL_TOKEN } from "../lib/constants";
-
-mixpanel.init(MIXPANEL_TOKEN);
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {

@@ -1,12 +1,12 @@
 import Head from "next/head";
 import styled from "styled-components";
-import mixpanel from "mixpanel-browser";
 
 import { PROFILE } from "../lib/constants";
 
 import Linkedin from "../components/Linkedin";
 import Instagram from "../components/Instagram";
 import ArrowRight from "../components/ArrowRight";
+import mixpanel from "../analytics/mixpanel";
 
 const Content = styled.div`
   min-height: 100vh;
