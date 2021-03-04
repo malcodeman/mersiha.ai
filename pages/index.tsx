@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styled from "styled-components";
 
-import { CONTACT_EMAIL } from "../lib/constants";
+import { PROFILE } from "../lib/constants";
 
 import Linkedin from "../components/Linkedin";
 import Instagram from "../components/Instagram";
@@ -25,6 +25,7 @@ const Card = styled.div`
   width: 100%;
   background-color: ${(props) => `${props.theme.background}f2`};
   border-radius: 10px;
+  transition: background-color 0.5s ease-in-out;
 `;
 
 const Header = styled.header`
@@ -80,11 +81,20 @@ const CtaButton = styled.button`
   cursor: pointer;
   letter-spacing: 1px;
   text-transform: uppercase;
+  transition: box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
 `;
 
 const Links = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const ArrowRightWrapper = styled.div`
+  margin-left: auto;
+  transition-duration: 0.5s;
 `;
 
 const Link = styled.a`
@@ -93,14 +103,13 @@ const Link = styled.a`
   padding: 1rem;
   border-top: 1px solid ${(props) => `${props.theme.primary}0c`};
   color: ${(props) => props.theme.primary};
+  &:hover ${ArrowRightWrapper} {
+    transform: translateX(0.5rem);
+  }
 `;
 
 const IconWrapper = styled.div`
   margin-right: 0.5rem;
-`;
-
-const ArrowRightWrapper = styled.div`
-  margin-left: auto;
 `;
 
 const LINKS = [
@@ -120,7 +129,7 @@ function Home() {
   return (
     <>
       <Head>
-        <title>Mersiha Ćeranić</title>
+        <title>{PROFILE.NAME}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Content>
@@ -129,11 +138,11 @@ function Home() {
             <ProfileImage src="profile.jpg" alt="" />
           </Header>
           <Body>
-            <Name>Mersiha Ćeranić</Name>
-            <Tagline>Data Science Developer</Tagline>
-            <Location>Sarajevo</Location>
-            <a href={`mailto:${CONTACT_EMAIL}`}>
-              <CtaButton>Get in touch</CtaButton>
+            <Name>{PROFILE.NAME}</Name>
+            <Tagline>{PROFILE.TAGLINE}</Tagline>
+            <Location>{PROFILE.LOCATION}</Location>
+            <a href={PROFILE.CTA_BUTTON_LINK}>
+              <CtaButton>{PROFILE.CTA_BUTTON_TITLE}</CtaButton>
             </a>
           </Body>
           <Links>
@@ -141,7 +150,7 @@ function Home() {
               return (
                 <Link key={item.href} href={item.href} target="_blank">
                   <IconWrapper>
-                    <item.icon />
+                    <item.icon size={24} />
                   </IconWrapper>
                   {item.label}
                   <ArrowRightWrapper>
