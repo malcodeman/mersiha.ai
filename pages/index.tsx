@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
+import mixpanel from "mixpanel-browser";
 
 import { PROFILE } from "../lib/constants";
 
@@ -140,7 +141,10 @@ function Home() {
             <Name>{PROFILE.NAME}</Name>
             <Tagline>{PROFILE.TAGLINE}</Tagline>
             <Location>{PROFILE.LOCATION}</Location>
-            <a href={PROFILE.CTA_BUTTON_LINK}>
+            <a
+              href={PROFILE.CTA_BUTTON_LINK}
+              onClick={() => mixpanel.track("CTA button click")}
+            >
               <CtaButton>{PROFILE.CTA_BUTTON_TITLE}</CtaButton>
             </a>
           </Body>

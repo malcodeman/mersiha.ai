@@ -11,3 +11,4 @@ export const PROFILE = {
   CTA_BUTTON_TITLE: "Get in touch",
   CTA_BUTTON_LINK: "mailto:mersiha996@gmail.com",
 };
+export const MIXPANEL_TOKEN = process.env.MIXPANEL_TOKEN;
