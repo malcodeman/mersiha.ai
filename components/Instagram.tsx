@@ -13,7 +13,7 @@ function Instagram(props: iconProps): React.ReactElement {
       width={size}
       height={size}
       viewBox="0 0 32 32"
-      enable-background="new 0 0 32 32"
+      enableBackground="new 0 0 32 32"
       xmlSpace="preserve"
     >
       <ellipse fill={color} cx="16" cy="16" rx="3.1" ry="3.1" />
