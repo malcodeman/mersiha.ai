@@ -6,7 +6,6 @@ import { PROFILE } from "../lib/constants";
 import Linkedin from "../components/Linkedin";
 import Instagram from "../components/Instagram";
 import ArrowRight from "../components/ArrowRight";
-import mixpanel from "../analytics/mixpanel";
 
 const Content = styled.div`
   min-height: 100vh;
@@ -141,10 +140,7 @@ function Home() {
             <Name>{PROFILE.NAME}</Name>
             <Tagline>{PROFILE.TAGLINE}</Tagline>
             <Location>{PROFILE.LOCATION}</Location>
-            <a
-              href={PROFILE.CTA_BUTTON_LINK}
-              onClick={() => mixpanel.track("CTA button click")}
-            >
+            <a href={PROFILE.CTA_BUTTON_LINK}>
               <CtaButton>{PROFILE.CTA_BUTTON_TITLE}</CtaButton>
             </a>
           </Body>
