@@ -5,7 +5,7 @@
 
 Mersiha Ćeranić profile page.
 
-![Screenshot](docs/images/screenshot.jpg)
+![Screenshot](readme/screenshot.png)
 
 ## License
 
