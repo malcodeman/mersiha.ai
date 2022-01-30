@@ -1,68 +1,31 @@
 import Head from "next/head";
-import { Center, Box, Text, Link, Wrap, WrapItem } from "@chakra-ui/layout";
-import { Button } from "@chakra-ui/button";
-import { Image } from "@chakra-ui/image";
-import { siLinkedin, siInstagram } from "simple-icons/icons";
-import { Mail } from "react-feather";
+import { Center, Container, Heading, Text } from "@chakra-ui/react";
 
-import { PROFILE } from "../lib/constants";
+import constants from "../lib/constants";
 
-import SimpleIcon from "../comonents/misc/SimpleIcon";
-
-const LINKS = [
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/mersiha-ceranic/",
-    icon: <SimpleIcon size={16} path={siLinkedin.path} />,
-  },
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/mceranic1/",
-    icon: <SimpleIcon size={16} path={siInstagram.path} />,
-  },
-];
+import About from "../comonents/About";
 
 function Home() {
   return (
     <>
       <Head>
-        <title>{PROFILE.NAME}</title>
+        <title>{constants.PROFILE.NAME}</title>
       </Head>
-      <Center minHeight="100vh">
-        <Box maxWidth="420px">
-          <Center>
-            <Image
-              height="120px"
-              width="120px"
-              borderRadius="full"
-              src="profile.jpg"
-              alt=""
-              mb="2"
-            />
-          </Center>
-          <Box textAlign="center" mb="4">
-            <Text mb="1">{PROFILE.NAME}</Text>
-            <Text mb="1">{PROFILE.TAGLINE}</Text>
-            <Text>{PROFILE.LOCATION}</Text>
-          </Box>
-          <Wrap>
-            <WrapItem>
-              <Link href={PROFILE.CTA_BUTTON_LINK}>
-                <Button leftIcon={<Mail size={16} />}>Mail</Button>
-              </Link>
-            </WrapItem>
-            {LINKS.map((item) => {
-              return (
-                <WrapItem key={item.href}>
-                  <Link href={item.href} isExternal>
-                    <Button leftIcon={item.icon}>{item.label}</Button>
-                  </Link>
-                </WrapItem>
-              );
-            })}
-          </Wrap>
-        </Box>
+      <Center as="section" minHeight={"calc(100vh - 8em)"}>
+        <Container maxW={"container.md"}>
+          <Text mb={"4"}>Hi, my name is</Text>
+          <Heading mb={"4"}>Mersiha Ćeranić</Heading>
+          <Text mb={"4"}>
+            Data Science developer with strong analytical, problem solving and
+            communication skills. Highly motivated and hardworking individual,
+            with an ability to meet deadlines and produce work to a high
+            standard. Eager to learn, meet new people and keep pushing the
+            limits for self-improvement. Enjoys using technology to find
+            solutions for challenging problems in everyday life.
+          </Text>
+        </Container>
       </Center>
+      <About />
     </>
   );
 }

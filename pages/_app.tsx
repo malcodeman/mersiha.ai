@@ -1,7 +1,9 @@
 import React from "react";
 import { AppProps } from "next/app";
 import { load } from "fathom-client";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Box } from "@chakra-ui/react";
+
+import Header from "../comonents/Header";
 
 const FATHOM_SITE_ID = "BZDQICES";
 
@@ -14,7 +16,10 @@ function App({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <ChakraProvider>
-      <Component {...pageProps} />
+      <Header />
+      <Box as={"main"} paddingTop={"32"}>
+        <Component {...pageProps} />
+      </Box>
     </ChakraProvider>
   );
 }
