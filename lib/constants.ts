@@ -14,8 +14,8 @@ const MENU = [
     label: "Experience",
   },
   {
-    value: "/#work",
-    label: "Work",
+    value: "/#talks",
+    label: "Talks",
   },
   {
     value: "/#contact",

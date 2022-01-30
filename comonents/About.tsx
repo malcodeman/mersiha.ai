@@ -11,14 +11,16 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import { map } from "ramda";
-import { siPostgresql, siTableau, siPython } from "simple-icons/icons";
+import { siMicrosoftsqlserver, siTableau, siPython } from "simple-icons/icons";
 
 import SimpleIcon from "./misc/SimpleIcon";
 
 const SKILLS = [
   {
     label: "SQL",
-    icon: <SimpleIcon color="#0c44fd" size={32} path={siPostgresql.path} />,
+    icon: (
+      <SimpleIcon color="#0c44fd" size={32} path={siMicrosoftsqlserver.path} />
+    ),
   },
   {
     label: "Tableau",

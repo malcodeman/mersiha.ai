@@ -5,6 +5,7 @@ import constants from "../lib/constants";
 
 import About from "../comonents/About";
 import Experience from "../comonents/Experience";
+import Talks from "../comonents/Talks";
 import SocialLinks from "../comonents/SocialLinks";
 import EmailLink from "../comonents/EmailLink";
 
@@ -30,6 +31,7 @@ function Home() {
       </Center>
       <About />
       <Experience />
+      <Talks />
       <SocialLinks />
       <EmailLink />
     </>
