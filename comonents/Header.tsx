@@ -7,12 +7,12 @@ import {
   IconButton,
   Portal,
   useDisclosure,
-  useMediaQuery,
 } from "@chakra-ui/react";
 import { Menu, X } from "react-feather";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { map, equals } from "ramda";
+import { useMediaQuery } from "@react-hookz/web";
 
 import constants from "../lib/constants";
 
@@ -23,7 +23,7 @@ const GRADIENT = "linear-gradient(90deg,#0c44fd,#e901d8)";
 const Header = () => {
   const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [isLargerThan30Em] = useMediaQuery("(min-width:30em)");
+  const isLargerThan30Em = useMediaQuery("only screen and (min-width:30em)");
 
   React.useEffect(() => {
     if (isLargerThan30Em) {

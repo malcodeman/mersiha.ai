@@ -4,6 +4,7 @@ import { Center, Container, Heading, Text } from "@chakra-ui/react";
 import constants from "../lib/constants";
 
 import About from "../comonents/About";
+import Experience from "../comonents/Experience";
 
 function Home() {
   return (
@@ -26,6 +27,7 @@ function Home() {
         </Container>
       </Center>
       <About />
+      <Experience />
     </>
   );
 }

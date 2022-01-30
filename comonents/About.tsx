@@ -8,6 +8,7 @@ import {
   Image,
   WrapItem,
   Wrap,
+  Divider,
 } from "@chakra-ui/react";
 import { map } from "ramda";
 import { siPostgresql, siTableau, siPython } from "simple-icons/icons";
@@ -31,26 +32,27 @@ const SKILLS = [
 
 function About() {
   return (
-    <Center id="about" as="section" paddingY={"8"}>
+    <Center id="about" as="section" paddingY={16}>
       <Container maxW={"container.md"}>
-        <Heading mb={"6"}>About me</Heading>
-        <Grid gridTemplateColumns={["1fr", "2fr 1fr"]} gridGap={"6"}>
+        <Heading mb={6}>About me</Heading>
+        <Divider marginY={6} />
+        <Grid gridTemplateColumns={["1fr", "2fr 1fr"]} gridGap={6}>
           <Box>
-            <Text mb={"4"}>
+            <Text mb={4}>
               Data Science developer with strong analytical, problem solving and
               communication skills. Highly motivated and hardworking individual,
               with an ability to meet deadlines and produce work to a high
               standard.
             </Text>
-            <Text mb={"4"}>
+            <Text mb={4}>
               Eager to learn, meet new people and keep pushing the limits for
               self-improvement.
             </Text>
-            <Text mb={"4"}>
+            <Text mb={4}>
               Enjoys using technology to find solutions for challenging problems
               in everyday life.
             </Text>
-            <Text mb={"4"}>
+            <Text mb={4}>
               Here are a few technologies I&apos;ve been working with recently:
             </Text>
             <Wrap spacing={4}>
@@ -58,7 +60,7 @@ function About() {
                 (item) => (
                   <WrapItem key={item.label} alignItems={"center"}>
                     {item.icon}
-                    <Text ml={"2"}>{item.label}</Text>
+                    <Text ml={2}>{item.label}</Text>
                   </WrapItem>
                 ),
                 SKILLS
