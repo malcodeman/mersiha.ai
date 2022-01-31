@@ -49,9 +49,9 @@ function Talks() {
     "var(--chakra-colors-whiteAlpha-200)"
   );
   return (
-    <Center id="talks" as="section" paddingY={16}>
+    <Center id="talks" as="section" paddingY={[8, 16, 32]}>
       <Container maxW={"container.md"}>
-        <Heading mb={6}>Talks</Heading>
+        <Heading>Talks</Heading>
         <Divider marginY={6} />
         <Grid
           gridTemplateColumns={["1fr", "1fr 1fr", "1fr 1fr 1fr"]}

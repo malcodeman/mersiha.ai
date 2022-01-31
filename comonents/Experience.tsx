@@ -104,9 +104,9 @@ const EXPERIENCE_PANELS = reverse([
 function Experience() {
   const isLargerThan30Em = useMediaQuery("only screen and (min-width:30em)");
   return (
-    <Center id="experience" as="section" paddingY={16}>
+    <Center id="experience" as="section" paddingY={[8, 16, 32]}>
       <Container maxW={"container.md"}>
-        <Heading mb={6}>Experience</Heading>
+        <Heading>Experience</Heading>
         <Divider marginY={6} />
         <Tabs orientation={isLargerThan30Em ? "vertical" : "horizontal"}>
           <TabList overflowY={["hidden", "initial"]}>

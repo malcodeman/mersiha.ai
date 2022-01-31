@@ -1,4 +1,9 @@
-import { Wrap, WrapItem, Link as ChakraLink } from "@chakra-ui/react";
+import {
+  Wrap,
+  WrapItem,
+  Link as ChakraLink,
+  WrapProps,
+} from "@chakra-ui/react";
 import { map } from "ramda";
 import { siLinkedin, siInstagram } from "simple-icons/icons";
 import { motion } from "framer-motion";
@@ -16,16 +21,9 @@ const LINKS = [
   },
 ];
 
-function SocialLinks() {
+function SocialLinks(props: WrapProps) {
   return (
-    <Wrap
-      display={["none", "none", "none", "flex"]}
-      direction={"column"}
-      position={"fixed"}
-      left={"32px"}
-      bottom={"32px"}
-      spacing={4}
-    >
+    <Wrap spacing={4} {...props}>
       {map(
         (item) => (
           <WrapItem

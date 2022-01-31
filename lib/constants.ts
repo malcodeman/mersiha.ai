@@ -1,8 +1,9 @@
 const PROFILE = {
   NAME: "Mersiha Ćeranić",
-  TAGLINE: "Data Science Developer",
-  LOCATION: "Sarajevo",
-  CTA_BUTTON_LINK: "mailto:mersiha996@gmail.com",
+  LINK: {
+    label: "mersiha996@gmail.com",
+    value: "mailto:mersiha996@gmail.com",
+  },
 };
 const MENU = [
   {

@@ -34,9 +34,9 @@ const SKILLS = [
 
 function About() {
   return (
-    <Center id="about" as="section" paddingY={16}>
+    <Center id="about" as="section" paddingBottom={[8, 16, 32]}>
       <Container maxW={"container.md"}>
-        <Heading mb={6}>About me</Heading>
+        <Heading>About me</Heading>
         <Divider marginY={6} />
         <Grid gridTemplateColumns={["1fr", "2fr 1fr"]} gridGap={6}>
           <Box>

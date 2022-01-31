@@ -1,10 +1,7 @@
 import { Box, Link as ChakraLink } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
-const LINK = {
-  label: "mersiha996@gmail.com",
-  value: "mailto:mersiha996@gmail.com",
-};
+import constants from "../lib/constants";
 
 function EmailLink() {
   return (
@@ -17,11 +14,11 @@ function EmailLink() {
       <ChakraLink
         as={motion.a}
         whileHover={{ y: 2 }}
-        href={LINK.value}
+        href={constants.PROFILE.LINK.value}
         _hover={{ color: "#0c44fd" }}
         style={{ writingMode: "vertical-rl" }}
       >
-        {LINK.label}
+        {constants.PROFILE.LINK.label}
       </ChakraLink>
     </Box>
   );

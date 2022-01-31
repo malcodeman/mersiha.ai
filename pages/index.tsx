@@ -6,6 +6,7 @@ import constants from "../lib/constants";
 import About from "../comonents/About";
 import Experience from "../comonents/Experience";
 import Talks from "../comonents/Talks";
+import Contact from "../comonents/Contact";
 import SocialLinks from "../comonents/SocialLinks";
 import EmailLink from "../comonents/EmailLink";
 
@@ -32,7 +33,14 @@ function Home() {
       <About />
       <Experience />
       <Talks />
-      <SocialLinks />
+      <Contact />
+      <SocialLinks
+        display={["none", "none", "none", "flex"]}
+        direction={"column"}
+        position={"fixed"}
+        left={"32px"}
+        bottom={"32px"}
+      />
       <EmailLink />
     </>
   );
