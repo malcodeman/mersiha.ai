@@ -3,9 +3,10 @@ import { AppProps } from "next/app";
 import { load } from "fathom-client";
 import { ChakraProvider, Box, extendTheme } from "@chakra-ui/react";
 
+import constants from "../lib/constants";
+
 import Header from "../comonents/Header";
 
-const FATHOM_SITE_ID = "BZDQICES";
 const THEME = extendTheme({
   styles: {
     global: {
@@ -24,9 +25,9 @@ const THEME = extendTheme({
 
 function App({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
-    load(FATHOM_SITE_ID, {
-      url: "https://warbler.resumebuilder.dev/script.js",
-      includedDomains: ["mersihaceranic.com", "www.mersihaceranic.com"],
+    load(constants.FATHOM_ANALYTICS.siteId, {
+      url: constants.FATHOM_ANALYTICS.url,
+      includedDomains: constants.FATHOM_ANALYTICS.includedDomains,
     });
   }, []);
   return (

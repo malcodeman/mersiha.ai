@@ -23,9 +23,15 @@ const MENU = [
     label: "Contact",
   },
 ];
+const FATHOM_ANALYTICS = {
+  siteId: "BZDQICES",
+  url: "https://wow-delight.mersihaceranic.com/script.js",
+  includedDomains: ["mersihaceranic.com", "www.mersihaceranic.com"],
+};
 const EXPORTS = {
   PROFILE,
   MENU,
+  FATHOM_ANALYTICS,
 };
 
 export default EXPORTS;
