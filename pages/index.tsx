@@ -19,7 +19,7 @@ function Home() {
       <Center as="section" minHeight={"calc(100vh - 8em)"}>
         <Container maxW={"container.md"}>
           <Text mb={"4"}>Hi, my name is</Text>
-          <Heading mb={"4"}>Mersiha Ćeranić</Heading>
+          <Heading mb={"4"}>Mersiha Karamustafić</Heading>
           <Text mb={"4"}>
             Data Science developer with strong analytical, problem solving and
             communication skills. Highly motivated and hardworking individual,

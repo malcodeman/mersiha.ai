@@ -3,7 +3,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/malcodeman/mersihaceranic.com/blob/master/LICENSE)
 
-Mersiha Ćeranić profile page.
+Mersiha Karamustafić profile page.
 
 ![Screenshot](readme/screenshot.png)
 

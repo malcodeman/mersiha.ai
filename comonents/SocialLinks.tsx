@@ -12,7 +12,7 @@ import SimpleIcon from "./misc/SimpleIcon";
 
 const LINKS = [
   {
-    value: "https://www.linkedin.com/in/mersiha-ceranic",
+    value: "https://www.linkedin.com/in/mersiha-karamustafic",
     icon: <SimpleIcon size={24} path={siLinkedin.path} />,
   },
   {

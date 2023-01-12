@@ -1,8 +1,8 @@
 const PROFILE = {
-  NAME: "Mersiha Ćeranić",
+  NAME: "Mersiha Karamustafić",
   LINK: {
-    label: "mersiha996@gmail.com",
-    value: "mailto:mersiha996@gmail.com",
+    label: "karamustafic.mersiha@gmail.com",
+    value: "mailto:karamustafic.mersiha@gmail.com",
   },
 };
 const MENU = [

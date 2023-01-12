@@ -10,11 +10,11 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
           <meta
             name="og:description"
-            content="Mersiha Ćeranić - Data Science Developer"
+            content="Mersiha Karamustafić - Data Science Developer"
           />
           <meta
             name="description"
-            content="Mersiha Ćeranić - Data Science Developer"
+            content="Mersiha Karamustafić - Data Science Developer"
           />
           <meta property="og:image" content="opengraph.png"></meta>
         </Head>
