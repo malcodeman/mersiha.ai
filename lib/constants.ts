@@ -25,7 +25,6 @@ const MENU = [
 ];
 const FATHOM_ANALYTICS = {
   siteId: "BZDQICES",
-  url: "https://wow-delight.mersihaceranic.com/script.js",
   includedDomains: ["mersihaceranic.com", "www.mersihaceranic.com"],
 };
 const EXPORTS = {

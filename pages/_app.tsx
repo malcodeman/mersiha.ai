@@ -1,7 +1,8 @@
 import React from "react";
 import { AppProps } from "next/app";
-import { load } from "fathom-client";
+import { load, trackPageview } from "fathom-client";
 import { ChakraProvider, Box, extendTheme } from "@chakra-ui/react";
+import Router from "next/router";
 
 import constants from "../lib/constants";
 
@@ -23,10 +24,15 @@ const THEME = extendTheme({
   },
 });
 
+Router.events.on("routeChangeComplete", (_as, routeProps) => {
+  if (!routeProps.shallow) {
+    trackPageview();
+  }
+});
+
 function App({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
     load(constants.FATHOM_ANALYTICS.siteId, {
-      url: constants.FATHOM_ANALYTICS.url,
       includedDomains: constants.FATHOM_ANALYTICS.includedDomains,
     });
   }, []);
