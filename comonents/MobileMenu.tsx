@@ -25,7 +25,7 @@ const MobileMenu = (props: Props) => {
       {map(
         (item) => (
           <Link key={item.value} href={item.value} passHref>
-            <Button size={"sm"} mb={"4"} onClick={onClose} isFullWidth>
+            <Button size={"sm"} mb={"4"} onClick={onClose} width="full">
               {item.label}
             </Button>
           </Link>
