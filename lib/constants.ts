@@ -5,6 +5,7 @@ const PROFILE = {
     value: "mailto:karamustafic.mersiha@gmail.com",
   },
 };
+
 const MENU = [
   {
     value: "/#about",
@@ -23,14 +24,10 @@ const MENU = [
     label: "Contact",
   },
 ];
-const FATHOM_ANALYTICS = {
-  siteId: "BZDQICES",
-  includedDomains: ["mersihaceranic.com", "www.mersihaceranic.com"],
-};
+
 const EXPORTS = {
   PROFILE,
   MENU,
-  FATHOM_ANALYTICS,
 };
 
 export default EXPORTS;
