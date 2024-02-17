@@ -13,7 +13,7 @@ import constants from "../lib/constants";
 
 import SocialLinks from "./SocialLinks";
 
-const REPO_LINK = "https://github.com/malcodeman/mersihaceranic.com";
+const REPO_LINK = "https://github.com/malcodeman/mersiha.ai";
 
 function Contact() {
   return (
