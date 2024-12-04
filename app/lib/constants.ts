@@ -28,3 +28,6 @@ export const METADATA: Metadata = {
     type: "website",
   },
 };
+
+export const INSTAGRAM_URL = "https://www.instagram.com/mceranic1";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/mersiha-karamustafic";
