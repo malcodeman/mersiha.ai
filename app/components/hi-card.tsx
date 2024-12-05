@@ -5,11 +5,11 @@ import { GridItem } from "./grid-item";
 
 export function HiCard() {
   return (
-    <GridItem>
+    <GridItem className="relative">
+      <Text className="absolute right-5 top-5 text-sm font-semibold">/ 01</Text>
       <div className="mb-4 flex items-center gap-2">
         <LuUser size={24} />
         <Heading>Hi, I&apos;m Mersiha 👋</Heading>
-        <Text className="ml-auto text-sm font-semibold">/ 01</Text>
       </div>
       <Text>
         a data scientist 🥼 with a passion for turning raw data into impactful

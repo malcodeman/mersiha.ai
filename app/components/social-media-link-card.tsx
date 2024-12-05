@@ -14,10 +14,10 @@ export function SocialMediaLinkCard(props: Props) {
 
   return (
     <a href={url} target="_blank">
-      <GridItem className="flex h-full flex-col">
-        <div className="mb-4 flex items-center gap-2">
-          <Text className="ml-auto text-sm font-semibold">/ 0{counter}</Text>
-        </div>
+      <GridItem className="relative h-full">
+        <Text className="absolute right-5 top-5 text-sm font-semibold">
+          / 0{counter}
+        </Text>
         <div className="flex h-full items-center justify-center">
           <Icon size={64} color={iconColor} />
         </div>
