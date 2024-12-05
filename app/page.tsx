@@ -2,6 +2,7 @@ import { SiInstagram, SiLinkedin } from "react-icons/si";
 import { INSTAGRAM_URL, LINKEDIN_URL } from "./lib/constants";
 import { SocialMediaLinkCard } from "./components/social-media-link-card";
 import { HiCard } from "./components/hi-card";
+import { ContactMeCard } from "./components/contact-me-card";
 
 export default function RootPage() {
   return (
@@ -20,6 +21,7 @@ export default function RootPage() {
           icon={SiLinkedin}
           iconColor="#0A66C2"
         />
+        <ContactMeCard />
       </div>
     </div>
   );
