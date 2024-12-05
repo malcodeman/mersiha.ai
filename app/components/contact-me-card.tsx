@@ -9,7 +9,7 @@ export function ContactMeCard() {
   return (
     <GridItem className="relative sm:col-span-2">
       <Text className="absolute right-5 top-5 text-sm font-semibold">/ 05</Text>
-      <div className="mb-4 flex items-center gap-2">
+      <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center">
         <LuMail size={24} />
         <Heading>Get in touch 🤙</Heading>
       </div>

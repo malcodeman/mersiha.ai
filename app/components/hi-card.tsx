@@ -7,7 +7,7 @@ export function HiCard() {
   return (
     <GridItem className="relative">
       <Text className="absolute right-5 top-5 text-sm font-semibold">/ 01</Text>
-      <div className="mb-4 flex items-center gap-2">
+      <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center">
         <LuUser size={24} />
         <Heading>Hi, I&apos;m Mersiha 👋</Heading>
       </div>
