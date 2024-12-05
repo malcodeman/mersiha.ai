@@ -7,8 +7,8 @@ import { GridItem } from "./grid-item";
 
 export function ContactMeCard() {
   return (
-    <GridItem className="relative">
-      <Text className="absolute right-5 top-5 text-sm font-semibold">/ 04</Text>
+    <GridItem className="relative sm:col-span-2">
+      <Text className="absolute right-5 top-5 text-sm font-semibold">/ 05</Text>
       <div className="mb-4 flex items-center gap-2">
         <LuMail size={24} />
         <Heading>Get in touch 🤙</Heading>

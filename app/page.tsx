@@ -3,6 +3,7 @@ import { INSTAGRAM_URL, LINKEDIN_URL } from "./lib/constants";
 import { SocialMediaLinkCard } from "./components/social-media-link-card";
 import { HiCard } from "./components/hi-card";
 import { ContactMeCard } from "./components/contact-me-card";
+import { LocationCard } from "./components/location-card";
 
 export default function RootPage() {
   return (
@@ -21,6 +22,7 @@ export default function RootPage() {
           icon={SiLinkedin}
           iconColor="#0A66C2"
         />
+        <LocationCard />
         <ContactMeCard />
       </div>
     </div>
