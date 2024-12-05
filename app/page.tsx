@@ -12,13 +12,13 @@ export default function RootPage() {
         <HiCard />
         <SocialMediaLinkCard
           url={INSTAGRAM_URL}
-          counter={2}
+          index={2}
           icon={SiInstagram}
           iconColor="#FF0069"
         />
         <SocialMediaLinkCard
           url={LINKEDIN_URL}
-          counter={3}
+          index={3}
           icon={SiLinkedin}
           iconColor="#0A66C2"
         />

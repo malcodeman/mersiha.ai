@@ -4,11 +4,12 @@ import { Text } from "@/ui/text";
 import { Button } from "@/ui/button";
 import { EMAIL } from "@/lib/constants";
 import { GridItem } from "./grid-item";
+import { CardIndex } from "./card-index";
 
 export function ContactMeCard() {
   return (
     <GridItem className="relative sm:col-span-2">
-      <Text className="absolute right-5 top-5 text-sm font-semibold">/ 05</Text>
+      <CardIndex value={5} />
       <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center">
         <LuMail size={24} />
         <Heading>Get in touch 🤙</Heading>
