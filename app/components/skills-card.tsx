@@ -110,7 +110,7 @@ function Flow() {
   const isMd = useMediaQuery("(min-width: 768px)");
   const isLg = useMediaQuery("(min-width: 1024px)");
   const isXl = useMediaQuery("(min-width: 1280px)");
-  const is2xl = useMediaQuery("(min-width: 1280px)");
+  const is2xl = useMediaQuery("(min-width: 1536px)");
   const { fitView } = useReactFlow();
 
   useEffect(() => {
@@ -127,18 +127,16 @@ function Flow() {
         <Heading>My tech stack</Heading>
       </div>
       <div className="h-52">
-        <ReactFlowProvider>
-          <ReactFlow
-            fitView
-            nodes={NODES}
-            edges={EDGES}
-            proOptions={{
-              hideAttribution: true,
-            }}
-          >
-            <Background />
-          </ReactFlow>
-        </ReactFlowProvider>
+        <ReactFlow
+          fitView
+          nodes={NODES}
+          edges={EDGES}
+          proOptions={{
+            hideAttribution: true,
+          }}
+        >
+          <Background />
+        </ReactFlow>
       </div>
     </GridItem>
   );
