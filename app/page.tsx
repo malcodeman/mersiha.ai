@@ -5,6 +5,7 @@ import { HiCard } from "./components/hi-card";
 import { ContactMeCard } from "./components/contact-me-card";
 import { LocationCard } from "./components/location-card";
 import { SkillsCard } from "./components/skills-card";
+import { ProfileCard } from "./components/profile-card";
 
 export default function RootPage() {
   return (
@@ -26,6 +27,7 @@ export default function RootPage() {
         <LocationCard />
         <ContactMeCard />
         <SkillsCard />
+        <ProfileCard />
       </div>
     </div>
   );
