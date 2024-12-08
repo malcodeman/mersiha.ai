@@ -10,7 +10,7 @@ import { ProfileCard } from "./components/profile-card";
 export default function RootPage() {
   return (
     <div>
-      <div className="container mx-auto my-5 grid gap-5 px-5 sm:mt-16 sm:grid-cols-[2fr_1fr] md:grid-cols-[2fr_1fr_1fr]">
+      <div className="container mx-auto my-5 grid gap-5 px-5 sm:my-16 sm:grid-cols-[2fr_1fr] md:grid-cols-[2fr_1fr_1fr]">
         <HiCard />
         <SocialMediaLinkCard
           url={INSTAGRAM_URL}
