@@ -6,6 +6,7 @@ import { ContactMeCard } from "./components/contact-me-card";
 import { LocationCard } from "./components/location-card";
 import { SkillsCard } from "./components/skills-card";
 import { ProfileCard } from "./components/profile-card";
+import { ConferenceImagesCard } from "./components/conference-images-card";
 
 export default function RootPage() {
   return (
@@ -28,6 +29,7 @@ export default function RootPage() {
         <ContactMeCard />
         <SkillsCard />
         <ProfileCard />
+        <ConferenceImagesCard />
       </div>
     </div>
   );

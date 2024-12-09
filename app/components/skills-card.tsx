@@ -120,13 +120,13 @@ function Flow() {
   }, [isSm, isMd, isLg, isXl, is2xl]);
 
   return (
-    <GridItem className="group-hover relative">
+    <GridItem className="group-hover relative flex flex-col">
       <CardIndex value={6} />
       <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center">
         <LuCode size={24} className="min-w-6" />
         <Heading>My tech stack</Heading>
       </div>
-      <div className="h-52">
+      <div className="h-full min-h-52">
         <ReactFlow
           fitView
           nodes={NODES}
