@@ -11,7 +11,7 @@ export function ContactMeCard() {
     <GridItem className="relative sm:col-span-2">
       <CardIndex value={5} />
       <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center">
-        <LuMail size={24} />
+        <LuMail size={24} className="min-w-6" />
         <Heading>Get in touch 🤙</Heading>
       </div>
       <Text className="mb-4">

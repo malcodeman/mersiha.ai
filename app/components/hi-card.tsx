@@ -10,8 +10,8 @@ export function HiCard() {
     <GridItem className="relative">
       <CardIndex value={1} />
       <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center">
-        <LuUser size={24} />
-        <Heading>Hi, I&apos;m Mersiha 👋</Heading>
+        <LuUser size={24} className="min-w-6" />
+        <Heading>Hi, I&apos;m Mersiha Karamustafić 👋</Heading>
       </div>
       <Text>
         <Highlight

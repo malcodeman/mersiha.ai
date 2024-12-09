@@ -9,7 +9,7 @@ export function ProfileCard() {
       <div className="absolute inset-0 rounded-[20px] bg-[url('/profile-sm.webp')] bg-cover bg-center brightness-50 sm:bg-[url('/profile-lg.webp')]" />
       <CardIndex value={7} />
       <div className="relative flex flex-col gap-2 md:flex-row md:items-center">
-        <LuPresentation size={24} />
+        <LuPresentation size={24} className="min-w-6" />
         <Heading>Me at DSC Europe 24</Heading>
       </div>
     </GridItem>

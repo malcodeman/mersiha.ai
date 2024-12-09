@@ -123,7 +123,7 @@ function Flow() {
     <GridItem className="group-hover relative">
       <CardIndex value={6} />
       <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center">
-        <LuCode size={24} />
+        <LuCode size={24} className="min-w-6" />
         <Heading>My tech stack</Heading>
       </div>
       <div className="h-52">
