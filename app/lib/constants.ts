@@ -42,4 +42,7 @@ export const CONFERENCE_IMAGES = [
   {
     src: "/conferences/conference-3-lg.webp",
   },
+  {
+    src: "/conferences/conference-4-lg.webp",
+  },
 ];
