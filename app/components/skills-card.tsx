@@ -1,12 +1,15 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "@react-hookz/web";
 import { LuCode } from "react-icons/lu";
 import {
   SiPython,
   SiTensorflow,
-  SiMysql,
   SiAmazonwebservices,
+  SiDocker,
+  SiGit,
+  SiPandas,
+  SiPostgresql,
 } from "react-icons/si";
 import {
   Background,
@@ -18,16 +21,13 @@ import {
 } from "@xyflow/react";
 import { Heading } from "@/ui/heading";
 import { Avatar } from "@/ui/avatar";
+import { Tableau } from "@/icons/tableau";
+import { MicrosoftAzure } from "@/icons/microsoft-azure";
+import { PowerBi } from "@/icons/power-bi";
+import { generateCircularPositions } from "@/lib/utils";
 import { GridItem } from "./grid-item";
 import { CardIndex } from "./card-index";
 import "@xyflow/react/dist/style.css";
-
-enum Position {
-  Left = "left",
-  Top = "top",
-  Right = "right",
-  Bottom = "bottom",
-}
 
 const STYLE = {
   backgroundColor: "transparent",
@@ -35,75 +35,40 @@ const STYLE = {
   borderColor: "#272727",
   borderRadius: "100%",
 };
+const CENTER_X = 240;
+const CENTER_Y = 90;
+const RADIUS = 180;
+const TECHNOLOGIES = [
+  { id: "python", icon: <SiPython size={24} /> },
+  { id: "tensorflow", icon: <SiTensorflow size={24} /> },
+  { id: "postgreSql", icon: <SiPostgresql size={24} /> },
+  { id: "aws", icon: <SiAmazonwebservices size={24} /> },
+  { id: "git", icon: <SiGit size={24} /> },
+  { id: "docker", icon: <SiDocker size={24} /> },
+  { id: "pandas", icon: <SiPandas size={24} /> },
+  { id: "tableau", icon: <Tableau /> },
+  { id: "azure", icon: <MicrosoftAzure /> },
+  { id: "powerBi", icon: <PowerBi /> },
+];
+const POSITIONS = generateCircularPositions(
+  TECHNOLOGIES.length,
+  CENTER_X,
+  CENTER_Y,
+  RADIUS,
+);
 const NODES: Node[] = [
   {
-    id: "python",
-    position: { x: 0, y: 0 },
-    data: { label: <SiPython size={24} /> },
-    style: STYLE,
-    targetPosition: Position.Right,
-    sourcePosition: Position.Left,
-  },
-  {
-    id: "tensorflow",
-    position: { x: 0, y: 180 },
-    data: { label: <SiTensorflow size={24} /> },
-    style: STYLE,
-    targetPosition: Position.Right,
-    sourcePosition: Position.Left,
-  },
-  {
-    id: "mysql",
-    position: { x: 480, y: 0 },
-    data: { label: <SiMysql size={24} /> },
-    style: STYLE,
-    targetPosition: Position.Left,
-    sourcePosition: Position.Right,
-  },
-  {
-    id: "aws",
-    position: { x: 480, y: 180 },
-    data: { label: <SiAmazonwebservices size={24} /> },
-    style: STYLE,
-    targetPosition: Position.Left,
-    sourcePosition: Position.Right,
-  },
-  {
     id: "mercy",
-    position: { x: 240, y: 90 },
+    position: { x: CENTER_X, y: CENTER_Y },
     data: { label: <Avatar src="/avatar.webp" /> },
     style: STYLE,
   },
-];
-const EDGES: Edge[] = [
-  {
-    id: "1",
-    source: "mercy",
-    target: "python",
-    animated: true,
-    style: { stroke: "#00F0FF" },
-  },
-  {
-    id: "2",
-    source: "mercy",
-    target: "tensorflow",
-    animated: true,
-    style: { stroke: "#00F0FF" },
-  },
-  {
-    id: "3",
-    source: "mercy",
-    target: "mysql",
-    animated: true,
-    style: { stroke: "#00F0FF" },
-  },
-  {
-    id: "4",
-    source: "mercy",
-    target: "aws",
-    animated: true,
-    style: { stroke: "#00F0FF" },
-  },
+  ...TECHNOLOGIES.map((tech, index) => ({
+    id: tech.id,
+    position: POSITIONS[index],
+    data: { label: tech.icon },
+    style: STYLE,
+  })),
 ];
 
 function Flow() {
@@ -113,6 +78,18 @@ function Flow() {
   const isXl = useMediaQuery("(min-width: 1280px)");
   const is2xl = useMediaQuery("(min-width: 1536px)");
   const { fitView } = useReactFlow();
+  const [isAnimated, setIsAnimated] = useState(false);
+  const edges: Edge[] = TECHNOLOGIES.map((tech, index) => {
+    const isAbove = POSITIONS[index].y < CENTER_Y;
+
+    return {
+      id: `edge-${tech.id}`,
+      source: isAbove ? tech.id : "mercy",
+      target: isAbove ? "mercy" : tech.id,
+      animated: isAnimated,
+      style: { stroke: "#00F0FF" },
+    };
+  });
 
   useEffect(() => {
     if (isSm || isMd || isLg || isXl || is2xl) {
@@ -121,7 +98,11 @@ function Flow() {
   }, [isSm, isMd, isLg, isXl, is2xl]);
 
   return (
-    <GridItem className="group-hover relative flex flex-col">
+    <GridItem
+      className="group-hover relative flex flex-col"
+      onMouseEnter={() => setIsAnimated(true)}
+      onMouseLeave={() => setIsAnimated(false)}
+    >
       <CardIndex value={6} />
       <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center">
         <LuCode size={24} className="min-w-6" />
@@ -131,13 +112,11 @@ function Flow() {
         <ReactFlow
           fitView
           nodes={NODES}
-          edges={EDGES}
+          edges={edges}
           proOptions={{
             hideAttribution: true,
           }}
-        >
-          <Background />
-        </ReactFlow>
+        />
       </div>
     </GridItem>
   );
