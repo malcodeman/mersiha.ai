@@ -12,7 +12,6 @@ import {
   SiPostgresql,
 } from "react-icons/si";
 import {
-  Background,
   ReactFlow,
   Node,
   Edge,
