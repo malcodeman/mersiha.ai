@@ -60,7 +60,7 @@ export function Carousel(props: Props) {
                 key={item.src}
                 index={i}
                 className={cn(
-                  "size-2 rounded-full",
+                  "size-[10px] rounded-full",
                   equals(i, index) ? "bg-[#00F0FF]" : "bg-[#F2F2F2]",
                 )}
               />
