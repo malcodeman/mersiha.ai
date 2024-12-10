@@ -17,6 +17,7 @@ import {
   ReactFlowProvider,
 } from "@xyflow/react";
 import { Heading } from "@/ui/heading";
+import { Avatar } from "@/ui/avatar";
 import { GridItem } from "./grid-item";
 import { CardIndex } from "./card-index";
 import "@xyflow/react/dist/style.css";
@@ -32,7 +33,7 @@ const STYLE = {
   backgroundColor: "transparent",
   width: "auto",
   borderColor: "#272727",
-  borderRadius: "0",
+  borderRadius: "100%",
 };
 const NODES: Node[] = [
   {
@@ -70,7 +71,7 @@ const NODES: Node[] = [
   {
     id: "mercy",
     position: { x: 240, y: 90 },
-    data: { label: "Mersiha" },
+    data: { label: <Avatar src="/avatar.webp" /> },
     style: STYLE,
   },
 ];
