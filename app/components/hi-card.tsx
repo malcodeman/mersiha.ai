@@ -1,18 +1,17 @@
 import { LuUser } from "react-icons/lu";
-import { Heading } from "@/ui/heading";
 import { Text } from "@/ui/text";
 import { Highlight } from "@/ui/highlight";
 import { GridItem } from "./grid-item";
-import { CardIndex } from "./card-index";
+import { GridHeader } from "./grid-header";
 
 export function HiCard() {
   return (
     <GridItem className="relative">
-      <CardIndex value={1} />
-      <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center">
-        <LuUser size={24} className="min-w-6" />
-        <Heading>Hi, I&apos;m Mersiha Karamustafić 👋</Heading>
-      </div>
+      <GridHeader
+        index={1}
+        title="Hi, I'm Mersiha Karamustafić 👋"
+        Icon={LuUser}
+      />
       <Text>
         <Highlight
           query={["data scientist", "AI"]}

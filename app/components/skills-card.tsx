@@ -18,14 +18,13 @@ import {
   useReactFlow,
   ReactFlowProvider,
 } from "@xyflow/react";
-import { Heading } from "@/ui/heading";
 import { Avatar } from "@/ui/avatar";
 import { Tableau } from "@/icons/tableau";
 import { MicrosoftAzure } from "@/icons/microsoft-azure";
 import { PowerBi } from "@/icons/power-bi";
 import { generateCircularPositions } from "@/lib/utils";
 import { GridItem } from "./grid-item";
-import { CardIndex } from "./card-index";
+import { GridHeader } from "./grid-header";
 import "@xyflow/react/dist/style.css";
 
 const STYLE = {
@@ -94,7 +93,7 @@ function Flow() {
     if (isSm || isMd || isLg || isXl || is2xl) {
       fitView();
     }
-  }, [isSm, isMd, isLg, isXl, is2xl]);
+  }, [isSm, isMd, isLg, isXl, is2xl, fitView]);
 
   return (
     <GridItem
@@ -102,11 +101,7 @@ function Flow() {
       onMouseEnter={() => setIsAnimated(true)}
       onMouseLeave={() => setIsAnimated(false)}
     >
-      <CardIndex value={6} />
-      <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center">
-        <LuCode size={24} className="min-w-6" />
-        <Heading>My tech stack</Heading>
-      </div>
+      <GridHeader index={6} title="My tech stack" Icon={LuCode} />
       <div className="h-full min-h-52">
         <ReactFlow
           fitView
