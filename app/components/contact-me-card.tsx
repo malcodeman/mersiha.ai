@@ -15,7 +15,7 @@ export function ContactMeCard() {
         <Heading>Get in touch 🤙</Heading>
       </div>
       <Text className="mb-4">
-        Feel free to reach out for collaborations or just a friendly hello.
+        Feel free to reach out for collaboration, or just a friendly hello.
       </Text>
       <a href={`mailto:${EMAIL}?subject=Hello`}>
         <Button className="w-full sm:w-auto">
