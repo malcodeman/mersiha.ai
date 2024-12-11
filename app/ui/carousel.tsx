@@ -15,21 +15,31 @@ type Props = {
 export function Carousel(props: Props) {
   const { items } = props;
   const [index, setIndex] = useState(0);
+  const [autoplay, setAutoplay] = useState(true);
 
-  useIntervalEffect(() => {
-    const updateIndex = ifElse(
-      () => index < dec(length(items)),
-      () => setIndex(inc(index)),
-      () => setIndex(0),
-    );
+  useIntervalEffect(
+    () => {
+      const updateIndex = ifElse(
+        () => index < dec(length(items)),
+        () => setIndex(inc(index)),
+        () => setIndex(0),
+      );
 
-    updateIndex();
-  }, 4000);
+      updateIndex();
+    },
+    autoplay ? 4000 : undefined,
+  );
+
+  function handleOnIndexChange(details: ArkCarousel.SlideChangeDetails) {
+    setIndex(details.index);
+    setAutoplay(false);
+  }
 
   return (
     <ArkCarousel.Root
       index={index}
-      onIndexChange={(details) => setIndex(details.index)}
+      onIndexChange={handleOnIndexChange}
+      loop
       className="h-full min-h-52"
     >
       <ArkCarousel.Viewport className="relative h-full overflow-x-hidden rounded-[20px]">
@@ -48,10 +58,7 @@ export function Carousel(props: Props) {
           )}
         </ArkCarousel.ItemGroup>
         <ArkCarousel.Control className="absolute bottom-4 left-1/2 flex -translate-x-2/4 items-center gap-1 rounded border border-[#272727] bg-[#161616CC] p-1">
-          <ArkCarousel.PrevTrigger
-            className="disabled:opacity-50"
-            disabled={equals(index, 0)}
-          >
+          <ArkCarousel.PrevTrigger className="disabled:opacity-50">
             <LuChevronLeft />
           </ArkCarousel.PrevTrigger>
           <ArkCarousel.IndicatorGroup className="flex gap-1">
@@ -66,10 +73,7 @@ export function Carousel(props: Props) {
               />
             ))}
           </ArkCarousel.IndicatorGroup>
-          <ArkCarousel.NextTrigger
-            className="disabled:opacity-50"
-            disabled={equals(index, dec(length(items)))}
-          >
+          <ArkCarousel.NextTrigger className="disabled:opacity-50">
             <LuChevronRight />
           </ArkCarousel.NextTrigger>
         </ArkCarousel.Control>
