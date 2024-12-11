@@ -19,6 +19,7 @@ import {
   ReactFlowProvider,
 } from "@xyflow/react";
 import { Avatar } from "@/ui/avatar";
+import { Tooltip } from "@/ui/tooltip";
 import { Tableau } from "@/icons/tableau";
 import { MicrosoftAzure } from "@/icons/microsoft-azure";
 import { PowerBi } from "@/icons/power-bi";
@@ -37,16 +38,16 @@ const CENTER_X = 240;
 const CENTER_Y = 90;
 const RADIUS = 180;
 const TECHNOLOGIES = [
-  { id: "python", icon: <SiPython size={24} /> },
-  { id: "tensorflow", icon: <SiTensorflow size={24} /> },
-  { id: "postgreSql", icon: <SiPostgresql size={24} /> },
-  { id: "aws", icon: <SiAmazonwebservices size={24} /> },
-  { id: "git", icon: <SiGit size={24} /> },
-  { id: "docker", icon: <SiDocker size={24} /> },
-  { id: "pandas", icon: <SiPandas size={24} /> },
-  { id: "tableau", icon: <Tableau /> },
-  { id: "azure", icon: <MicrosoftAzure /> },
-  { id: "powerBi", icon: <PowerBi /> },
+  { id: "python", label: "Python", icon: <SiPython size={24} /> },
+  { id: "tensorflow", label: "TensorFlow", icon: <SiTensorflow size={24} /> },
+  { id: "postgreSql", label: "PostgreSQL", icon: <SiPostgresql size={24} /> },
+  { id: "aws", label: "AWS", icon: <SiAmazonwebservices size={24} /> },
+  { id: "git", label: "Git", icon: <SiGit size={24} /> },
+  { id: "docker", label: "Docker", icon: <SiDocker size={24} /> },
+  { id: "pandas", label: "Pandas", icon: <SiPandas size={24} /> },
+  { id: "tableau", label: "Tableau", icon: <Tableau /> },
+  { id: "azure", label: "Azure", icon: <MicrosoftAzure /> },
+  { id: "powerBi", label: "Power BI", icon: <PowerBi /> },
 ];
 const POSITIONS = generateCircularPositions(
   TECHNOLOGIES.length,
@@ -64,7 +65,7 @@ const NODES: Node[] = [
   ...TECHNOLOGIES.map((tech, index) => ({
     id: tech.id,
     position: POSITIONS[index],
-    data: { label: tech.icon },
+    data: { label: <Tooltip content={tech.label}>{tech.icon}</Tooltip> },
     style: STYLE,
   })),
 ];
