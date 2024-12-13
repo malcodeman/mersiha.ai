@@ -78,7 +78,7 @@ function Flow() {
   const is2xl = useMediaQuery("(min-width: 1536px)");
   const { fitView } = useReactFlow();
   const [isAnimated, setIsAnimated] = useState(false);
-  const [panOnDrag, setPanOnDrag] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
   const edges: Edge[] = TECHNOLOGIES.map((tech, index) => {
     const isAbove = POSITIONS[index].y < CENTER_Y;
 
@@ -98,7 +98,7 @@ function Flow() {
   }, [isSm, isMd, isLg, isXl, is2xl, fitView]);
 
   useEffect(() => {
-    setPanOnDrag(isSm || isMd || isLg || isXl || is2xl);
+    setIsDesktop(isSm || isMd || isLg || isXl || is2xl);
   }, [isSm, isMd, isLg, isXl, is2xl]);
 
   return (
@@ -113,7 +113,8 @@ function Flow() {
           fitView
           nodes={NODES}
           edges={edges}
-          panOnDrag={panOnDrag}
+          panOnDrag={isDesktop ? true : false}
+          zoomOnDoubleClick={isDesktop ? true : false}
           nodesDraggable={false}
           proOptions={{
             hideAttribution: true,
