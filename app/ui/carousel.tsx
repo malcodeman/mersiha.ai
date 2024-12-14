@@ -66,6 +66,7 @@ export function Carousel(props: Props) {
               <ArkCarousel.Indicator
                 key={item.src}
                 index={i}
+                aria-label="Indicator"
                 className={cn(
                   "size-[10px] rounded-full",
                   equals(i, index) ? "bg-[#00F0FF]" : "bg-[#F2F2F2]",

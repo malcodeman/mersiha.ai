@@ -14,6 +14,7 @@ export function Avatar(props: Props) {
     <ArkAvatar.Root>
       <ArkAvatar.Image
         {...rest}
+        alt=""
         className={cn(
           "object-cover",
           equals(size, "xs") && "size-8",
