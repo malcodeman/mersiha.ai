@@ -68,7 +68,7 @@ export function Carousel(props: Props) {
                 index={i}
                 aria-label="Indicator"
                 className={cn(
-                  "size-[10px] rounded-full",
+                  "size-3 rounded-full",
                   equals(i, index) ? "bg-[#00F0FF]" : "bg-[#F2F2F2]",
                 )}
               />
