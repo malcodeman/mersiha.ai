@@ -59,7 +59,7 @@ const NODES: Node[] = [
   {
     id: "mercy",
     position: { x: CENTER_X, y: CENTER_Y },
-    data: { label: <Avatar src="/avatar.webp" /> },
+    data: { label: <Avatar src="/avatar.webp" aria-label="Mercy" /> },
     style: STYLE,
   },
   ...TECHNOLOGIES.map((tech, index) => ({
