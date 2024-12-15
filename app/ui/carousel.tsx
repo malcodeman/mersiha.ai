@@ -57,18 +57,18 @@ export function Carousel(props: Props) {
             items,
           )}
         </ArkCarousel.ItemGroup>
-        <ArkCarousel.Control className="absolute bottom-4 left-1/2 flex -translate-x-2/4 items-center gap-1 rounded border border-[#272727] bg-[#161616CC] p-1">
+        <ArkCarousel.Control className="absolute bottom-4 left-1/2 flex -translate-x-2/4 items-center gap-2 rounded border border-[#272727] bg-[#161616CC] p-1">
           <ArkCarousel.PrevTrigger className="disabled:opacity-50">
             <LuChevronLeft />
           </ArkCarousel.PrevTrigger>
-          <ArkCarousel.IndicatorGroup className="flex gap-1">
+          <ArkCarousel.IndicatorGroup className="flex gap-2">
             {items.map((item, i) => (
               <ArkCarousel.Indicator
                 key={item.src}
                 index={i}
                 aria-label="Indicator"
                 className={cn(
-                  "size-[10px] rounded-full",
+                  "size-3 rounded-full",
                   equals(i, index) ? "bg-[#00F0FF]" : "bg-[#F2F2F2]",
                 )}
               />
