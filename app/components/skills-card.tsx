@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { cloneElement, useEffect, useState } from "react";
 import { useMediaQuery } from "@react-hookz/web";
 import { LuCode } from "react-icons/lu";
 import {
@@ -65,7 +65,13 @@ const NODES: Node[] = [
   ...TECHNOLOGIES.map((tech, index) => ({
     id: tech.id,
     position: POSITIONS[index],
-    data: { label: <Tooltip content={tech.label}>{tech.icon}</Tooltip> },
+    data: {
+      label: (
+        <Tooltip content={tech.label}>
+          {cloneElement(tech.icon, { "aria-label": tech.label })}
+        </Tooltip>
+      ),
+    },
     style: STYLE,
   })),
 ];
