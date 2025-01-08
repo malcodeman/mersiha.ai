@@ -13,58 +13,65 @@ type Props = {
 
 export function Carousel(props: Props) {
   const { items } = props;
-  const [index, setIndex] = useState(0);
+  const [page, setPage] = useState(0);
   const [autoplay, setAutoplay] = useState(true);
 
   useIntervalEffect(
     () => {
-      const updateIndex = ifElse(
-        () => index < dec(length(items)),
-        () => setIndex(inc(index)),
-        () => setIndex(0),
+      const updatePage = ifElse(
+        () => page < dec(length(items)),
+        () => setPage(inc(page)),
+        () => setPage(0),
       );
 
-      updateIndex();
+      updatePage();
     },
     autoplay ? 4000 : undefined,
   );
 
-  function handleOnIndexChange(details: ArkCarousel.SlideChangeDetails) {
-    setIndex(details.index);
+  function handleOnPageChange(details: ArkCarousel.PageChangeDetails) {
+    setPage(details.page);
+  }
+
+  function disableAutoplay() {
     setAutoplay(false);
   }
 
   return (
     <ArkCarousel.Root
-      index={index}
-      onIndexChange={handleOnIndexChange}
+      page={page}
+      onPageChange={handleOnPageChange}
       loop
-      className="h-full min-h-52"
+      className="relative h-full min-h-52 overflow-x-hidden rounded-[20px]"
     >
-      <ArkCarousel.Viewport className="relative h-full overflow-x-hidden rounded-[20px]">
-        <ArkCarousel.ItemGroup style={{ height: "100%" }}>
-          {map(
-            (item) => (
-              <ArkCarousel.Item key={item.src} index={index}>
-                <img
-                  src={item.src}
-                  alt=""
-                  className="h-full w-full object-cover brightness-50"
-                />
-              </ArkCarousel.Item>
-            ),
-            items,
-          )}
-        </ArkCarousel.ItemGroup>
-        <ArkCarousel.Control className="absolute bottom-4 left-1/2 flex -translate-x-2/4 items-center gap-1 rounded border border-[#272727] bg-[#161616CC] p-1">
-          <ArkCarousel.PrevTrigger className="disabled:opacity-50">
-            <LuChevronLeft />
-          </ArkCarousel.PrevTrigger>
-          <ArkCarousel.NextTrigger className="disabled:opacity-50">
-            <LuChevronRight />
-          </ArkCarousel.NextTrigger>
-        </ArkCarousel.Control>
-      </ArkCarousel.Viewport>
+      <ArkCarousel.ItemGroup className="h-full">
+        {map(
+          (item) => (
+            <ArkCarousel.Item key={item.src} index={page}>
+              <img
+                src={item.src}
+                alt=""
+                className="h-full w-full object-cover brightness-50"
+              />
+            </ArkCarousel.Item>
+          ),
+          items,
+        )}
+      </ArkCarousel.ItemGroup>
+      <ArkCarousel.Control className="absolute bottom-4 left-1/2 flex -translate-x-2/4 items-center gap-1 rounded border border-[#272727] bg-[#161616CC] p-1">
+        <ArkCarousel.PrevTrigger
+          onClick={disableAutoplay}
+          className="disabled:opacity-50"
+        >
+          <LuChevronLeft />
+        </ArkCarousel.PrevTrigger>
+        <ArkCarousel.NextTrigger
+          onClick={disableAutoplay}
+          className="disabled:opacity-50"
+        >
+          <LuChevronRight />
+        </ArkCarousel.NextTrigger>
+      </ArkCarousel.Control>
     </ArkCarousel.Root>
   );
 }
