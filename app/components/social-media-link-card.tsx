@@ -13,7 +13,7 @@ export function SocialMediaLinkCard(props: Props) {
   const { url, index, icon: Icon, iconColor = "#F2F2F2" } = props;
 
   return (
-    <a href={url} target="_blank">
+    <a href={url} target="_blank" className="w-full">
       <GridItem className="relative h-full">
         <CardIndex value={index} />
         <div className="flex h-full items-center justify-center">

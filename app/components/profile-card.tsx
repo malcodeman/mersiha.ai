@@ -7,7 +7,7 @@ export function ProfileCard() {
     <GridItem className="relative aspect-square sm:aspect-auto">
       <div className="absolute inset-0 rounded-[20px] bg-[url('/profile-sm.webp')] bg-cover bg-center brightness-50 sm:bg-[url('/profile-lg.webp')]" />
       <GridHeader
-        index={7}
+        index={8}
         title="Me at DSC Europe 24"
         Icon={LuPresentation}
         className="relative"

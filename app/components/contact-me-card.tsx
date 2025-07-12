@@ -8,7 +8,7 @@ import { GridHeader } from "./grid-header";
 export function ContactMeCard() {
   return (
     <GridItem className="relative flex flex-col sm:col-span-2">
-      <GridHeader index={5} title="Get in touch 🤙" Icon={LuMail} />
+      <GridHeader index={6} title="Get in touch 🤙" Icon={LuMail} />
       <Text className="mb-4">
         Feel free to reach out for collaboration, or just a friendly hello.
       </Text>

@@ -113,7 +113,7 @@ function Flow() {
       onMouseEnter={() => setIsAnimated(true)}
       onMouseLeave={() => setIsAnimated(false)}
     >
-      <GridHeader index={6} title="My tech stack" Icon={LuCode} />
+      <GridHeader index={7} title="My tech stack" Icon={LuCode} />
       <div className="h-full min-h-52">
         <ReactFlow
           fitView
