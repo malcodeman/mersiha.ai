@@ -42,6 +42,7 @@ export function Carousel(props: Props) {
       page={page}
       onPageChange={handleOnPageChange}
       loop
+      slideCount={length(items)}
       className="relative h-full min-h-52 overflow-x-hidden rounded-[20px]"
     >
       <ArkCarousel.ItemGroup className="h-full">
