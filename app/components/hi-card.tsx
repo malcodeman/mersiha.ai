@@ -14,8 +14,8 @@ export function HiCard() {
       />
       <Text>
         <Highlight
-          query={["data scientist", "AI"]}
-          text="a data scientist with a passion for turning raw data into impactful
+          query={["senior AI engineer", "AI"]}
+          text="a senior AI engineer with a passion for turning raw data into impactful
         insights with AI and machine learning 🤖."
         />
       </Text>

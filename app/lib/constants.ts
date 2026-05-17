@@ -3,8 +3,8 @@ import { equals } from "ramda";
 
 export const IS_PROD = equals(process.env.NEXT_PUBLIC_VERCEL_ENV, "production");
 
-const TITLE = "Mersiha Karamustafić | Data scientist";
-const DESCRIPTION = "Data scientist turning data into impact with AI.";
+const TITLE = "Mersiha Karamustafić | Senior AI Engineer";
+const DESCRIPTION = "Senior AI engineer turning data into impact with AI.";
 
 export const METADATA: Metadata = {
   title: TITLE,
